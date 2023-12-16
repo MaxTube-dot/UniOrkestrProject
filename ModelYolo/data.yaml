@@ -1,0 +1,6 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 14
+names: ['no_defect', 'scuffing', 'black_dot', 'blister', 'marker','dirt', 'tattoo', 'n_d_tattoo', 'micro-step', 'n_d_micro-step', 'dent', 'fur_damage', 'risk', 'scratch_with_a_']
