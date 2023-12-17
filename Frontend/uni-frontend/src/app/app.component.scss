@@ -1,0 +1,46 @@
+/* CSS стили */
+header {
+  background-color: #f8e9d6;
+  padding: 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #6d4c41;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-item a:hover {
+  background-color: #f3d7c6;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8e9d6;
+  padding: 10px;
+  text-align: center;
+}
+
+.footer-content {
+  color: #6d4c41;
+  transition: background-color 0.3s ease;
+}
+
+.footer-content:hover {
+  background-color: #f3d7c6;
+}

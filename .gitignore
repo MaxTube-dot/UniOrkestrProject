@@ -1,0 +1,13 @@
+ModelYolo/
+runs/
+best.pt
+main_parse_data.py
+model.py
+ModelYolo.zip
+show_file_box.py
+test.py
+train.py
+train.py
+yolov8n.pt
+yolov8s.pt
+.vscode/

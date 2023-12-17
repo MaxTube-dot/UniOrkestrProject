@@ -1,0 +1,110 @@
+/* CSS стили */
+.admin-panel {
+  background-color: #f8f3e9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-panel h2 {
+  color: #6d4c41;
+}
+
+.active-nodes table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.active-nodes th, .active-nodes td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.active-nodes th {
+  background-color: #f2e8d9;
+}
+
+.upload-form, .node-configuration {
+  margin-top: 20px;
+}
+
+/* CSS стили */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+.button {
+  background-color: #FFA500;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* CSS стили */
+.docker-container {
+  background-color: #f8f3e9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.docker-container h2 {
+  color: #6d4c41;
+}
+
+.docker-container form {
+  margin-top: 20px;
+}
+
+.docker-container label {
+  display: block;
+  margin-bottom: 10px;
+  color: #6d4c41;
+}
+
+.docker-container select  {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+.docker-container input  {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.docker-container button {
+  padding: 10px 20px;
+  background-color: #6d4c41;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.docker-container button:hover {
+  background-color: #8c674f;
+}

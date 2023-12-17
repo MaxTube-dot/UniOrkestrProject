@@ -1,0 +1,111 @@
+body {
+  background-color: #F5ECEC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  height: 100px;
+}
+
+h1 {
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.image-container {
+  margin-bottom: 20px;
+}
+
+img, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.button {
+  background-color: #FFA500;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.result-container {
+  margin-top: 20px;
+}
+th, td {
+  padding: 10px;
+}
+
+.bounding-box {
+  position: absolute;
+  border: 2px solid #FFA500;
+  pointer-events: none;
+}
+
+
+div {
+  margin-bottom: 20px;
+}
+
+
+img, canvas {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.file-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #FFDAB9;
+  color: #FFFFFF;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.file-label:hover {
+  background-color: #FFA500;
+}
+
+.file-name {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 14px;
+  color: #333333;
+}
+
+
+/* CSS стили */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

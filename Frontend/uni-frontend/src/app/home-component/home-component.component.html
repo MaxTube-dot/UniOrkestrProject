@@ -1,0 +1,55 @@
+<form [formGroup]="myForm" novalidate>
+  <div class="container">
+    <h1>Распознавание изображений</h1>
+    <div class="image-container">
+      <div>
+        <input style="display: none" formControlName="imageUpload" type="file" accept="image/*"  (change)="onFileSelected($event)" #file>
+        <button class="button"  (click)="file.click()" >Загрузить фотографию</button>
+      </div>
+
+    </div>
+    <div class="result-container">
+      <!-- Здесь будет вывод итогового изображения и bounding box'ов -->
+      <div style="position: relative;" *ngIf="myForm.get('imageUpload')?.value">
+        <canvas #layer1 id="layer1"
+                style="position: relative; z-index: 0;"></canvas>
+        <canvas #layer2 id="layer2"
+                style="position: relative; display: none; z-index: 1;"></canvas>
+
+        <div class="loader-container" *ngIf="loadingPredict">
+          <div class="loader"></div>
+        </div>
+
+        <div style="position: relative;" *ngIf="!points || points.length == 0" >
+          <p>Список дефектов пуст</p>
+        </div>
+
+        <div style="position: relative;" *ngIf="points && points.length > 0">
+          <p>Таблица результатов</p>
+          <table>
+            <tr>
+              <th>Номер класса</th>
+              <th>Тип</th>
+              <th>Координата X</th>
+              <th>Координата Y</th>
+              <th>Осевая координата</th>
+              <th>Радиальная координат дефекта</th>
+            </tr>
+            <ng-container *ngFor="let point of points">
+            <tr (mouseenter)="showSelected(point)" (mouseleave)="showLeave(point)">
+              <td>{{point.classType}}</td>
+              <td>{{point.className}}</td>
+              <td>{{point.X1}}</td>
+              <td>{{point.Y1}}</td>
+              <td>Не реализовано</td>
+              <td>Не реализовано</td>
+            </tr>
+            </ng-container>
+            <!-- Добавьте дополнительные строки по необходимости -->
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</form>
