@@ -109,3 +109,19 @@ img, canvas {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+
+.important-info {
+  background-color: #f8e9d6;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.important-info h2 {
+  color: #6d4c41;
+}
+
+.important-info p {
+  color: #6d4c41;
+}

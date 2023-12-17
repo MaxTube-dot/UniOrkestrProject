@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
+import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {NgForOf, NgIf} from "@angular/common";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {error} from "@angular/compiler-cli/src/transformers/util";
@@ -62,13 +62,27 @@ export class HomeComponentComponent  implements  OnInit  {
 
 
   myForm : FormGroup = new FormGroup({
-    "imageUpload": new FormControl()
+    "imageUpload": new FormControl(),
+    "radius": new FormControl(0.07, [Validators.min(0.1)])
   });
   constructor(private http: HttpClient) {
   }
 
   ngOnInit() {
 
+  }
+
+
+  calculateCoordinatesRadial(radius:any, x:any, y:any) {
+    debugger;
+    const radialCoordinate = Math.sqrt(x**2 + y**2) - radius;
+    return radialCoordinate;
+  }
+
+  calculateCoordinatesaxial(radius:any, x:any, y:any) {
+    const axialCoordinate = Math.atan2(y, x);
+
+    return axialCoordinate;
   }
 
   onFileSelected(event:any) {
@@ -176,6 +190,15 @@ export class HomeComponentComponent  implements  OnInit  {
     debugger;
     this.selectedId = 0;
     this.showImage();
+  }
+
+  PreparedX(point: Defect) {
+   return  point.X1 + (point.W /2)
+
+  }
+
+  PreparedY(point: Defect) {
+    return  point.Y1 + (point.H /2)
   }
 }
 

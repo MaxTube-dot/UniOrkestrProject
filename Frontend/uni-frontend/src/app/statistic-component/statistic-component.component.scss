@@ -1,0 +1,23 @@
+.statistics-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.statistics-table th, .statistics-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.statistics-table th {
+  background-color: #f2e8d9;
+}
+
+.statistics-table td a {
+  color: #6d4c41;
+  text-decoration: none;
+}
+
+.statistics-table td a:hover {
+  text-decoration: underline;
+}

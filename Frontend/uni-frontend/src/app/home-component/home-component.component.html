@@ -1,6 +1,8 @@
 <form [formGroup]="myForm" novalidate>
   <div class="container">
+
     <h1>Распознавание изображений</h1>
+    <h4>Нажмите кнопку "Загрузить фотографию" чтобы проверить, как работает распознавание</h4>
     <div class="image-container">
       <div>
         <input style="display: none" formControlName="imageUpload" type="file" accept="image/*"  (change)="onFileSelected($event)" #file>
@@ -30,24 +32,41 @@
             <tr>
               <th>Номер класса</th>
               <th>Тип</th>
-              <th>Координата X</th>
-              <th>Координата Y</th>
-              <th>Осевая координата</th>
+              <th>Координата X центра</th>
+              <th>Координата Y центра</th>
+              <th>Осевая координата дефекта</th>
               <th>Радиальная координат дефекта</th>
             </tr>
             <ng-container *ngFor="let point of points">
-            <tr (mouseenter)="showSelected(point)" (mouseleave)="showLeave(point)">
-              <td>{{point.classType}}</td>
-              <td>{{point.className}}</td>
-              <td>{{point.X1}}</td>
-              <td>{{point.Y1}}</td>
-              <td>Не реализовано</td>
-              <td>Не реализовано</td>
-            </tr>
+              <tr (mouseenter)="showSelected(point)" (mouseleave)="showLeave(point)">
+                <td>{{point.classType}}</td>
+                <td>{{point.className}}</td>
+                <td>{{point.X1}}</td>
+                <td>{{point.Y1}}</td>
+                <td>{{calculateCoordinatesaxial(myForm.get("radius")?.value, PreparedX(point), PreparedY(point))}}</td>
+                <td>{{calculateCoordinatesRadial(myForm.get("radius")?.value, PreparedX(point), PreparedY(point))}}</td>
+              </tr>
             </ng-container>
             <!-- Добавьте дополнительные строки по необходимости -->
           </table>
+
+          <div>
+            <label>Введите радиус трубы:</label>
+            <input formControlName = 'radius' id="node-name"  type="number"  min="0.1" >
+          </div>
+          <div class="important-info">
+            <h2>Наведи курсор на значения в таблице</h2>
+          </div>
         </div>
+
+
+
+      </div>
+      <div class="important-info">
+        <h2>Важная информация</h2>
+        <p>В данной реализации может показаться, что модель долго обрабатывает изображение, однако это не так, задержки при обработке изображение обусловлены исключительно сетевыми сосбенностями подключения. Для публикации данного сайта использовались бесплатные инструменты, такие как duckdns и другие, которые замедляют его работу.</p>
+        <p>В среде, где сетевые запросы будут идти быстрее, обработка одного запроса будет занимать в среднем 160мс на видеокарте RTX 3050.</p>
+        <p>Сайт оптимизирован для ПК и браузера "Яндекс Браузер"</p>
 
       </div>
     </div>
