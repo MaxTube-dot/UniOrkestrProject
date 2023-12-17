@@ -20,7 +20,7 @@ Frontend: Содержит код фронтенда, разработанный
 
 Чтобы начать работу с UniOrkestrProject, выполните следующие шаги:
 
-Откройте папки Frontend, uni_rest_api_master, uni_rest_api_node и проследуйте инструкциям в файлах readme.md.
+Откройте папки Frontend/uni-frontend, uni_rest_api_master, uni_rest_api_node и проследуйте инструкциям в файлах readme.md.
 
 ##другие файлы
 

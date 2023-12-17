@@ -6,6 +6,13 @@ Backend - uni_rest_api_master: Основное приложение, отвеч
 ##Запуск
 
 -Для запуска блога у вас уже должен быть установлен Python 3.9.0
+
 -Установите зависимости командой pip install -r requirements.txt
+
 -Запустите сервер командой python3 manage.py runserver или python manage.py runserver
+
 -Для корректной работы возможно потребуется изменить политику безопасностии, CORS в файле setting.py 
+
+## Для корректной работы
+После того, как будет запущен uni_rest_api_node измените в файлах проекта строчки, указав актуальный url node 
+http://localhost:8080 -> your-ulr-node.ru:port
