@@ -23,6 +23,8 @@ export class HomeComponentComponent  implements  OnInit  {
   public imgHeight: any;
   public url: any;
   public image:any;
+  myForm : FormGroup ;
+
 
   defectDesc = ["не дефект", "потертость" , "черная точка",
                         "плена","маркер","грязь",
@@ -61,11 +63,11 @@ export class HomeComponentComponent  implements  OnInit  {
   // Нарисуйте прямоугольник на холсте
 
 
-  myForm : FormGroup = new FormGroup({
-    "imageUpload": new FormControl(),
-    "radius": new FormControl(0.07, [Validators.min(0.1)])
-  });
   constructor(private http: HttpClient) {
+    this.myForm  =  new FormGroup({
+      "imageUpload": new FormControl(),
+      "radius": new FormControl(0.07, [Validators.min(0.1)])
+    });
   }
 
   ngOnInit() {

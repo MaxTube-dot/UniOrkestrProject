@@ -8,12 +8,13 @@ import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from "@angular
   selector: 'app-admin-panele-component',
   standalone: true,
   imports: [
+    ReactiveFormsModule,
     NgForOf,
     HttpClientModule,
     RouterLink,
     NgIf,
     FormsModule,
-    ReactiveFormsModule,
+
   ],
   templateUrl: './admin-panele-component.component.html',
   styleUrl: './admin-panele-component.component.scss'
@@ -23,13 +24,15 @@ export class AdminPaneleComponentComponent implements OnInit{
   selectedModel:any
   loading_node = true;
 
-  myForm : FormGroup = new FormGroup({
-    "existNode": new FormControl('no'),
-    "NodeName": new FormControl(),
-    "Profile": new FormControl('medium'),
-  });
+  myForm : FormGroup
 
   constructor(private http: HttpClient) {
+    this.myForm = new FormGroup({
+      "existNode": new FormControl('no'),
+      "NodeName": new FormControl(),
+      "Profile": new FormControl('medium'),
+    });
+
   }
   ngOnInit(): void {
   this.updateNodes()
@@ -37,6 +40,7 @@ export class AdminPaneleComponentComponent implements OnInit{
   }
 
   updateNodes(){
+    this.nodes  = []
     this.loading_node = true;
     this.http.get("http://reter34erwd.duckdns.org:6788/get_active_nodes").subscribe((value:any) => {
       this.loading_node = false;

@@ -6,14 +6,13 @@ if __name__ == '__main__':
     import multiprocessing
     multiprocessing.freeze_support()
 
-model = YOLO('yolov8s.pt')
-
+model = YOLO('yolov8m.pt')
 device = torch.device('cuda')
 
 results = model.train(
-   data='D:/AtomicHack/UniProject/ModelYolo/data.yaml',
-   imgsz=608,
-   epochs=10,
-   batch=8,
-   name='yolov8n_custom',
+   data='/content/sample_data/ModelYolo/data.yaml',
+   imgsz=640,
+   epochs=25,
+   batch=32,
+   name='yolov8s_custom',
    device=device)
